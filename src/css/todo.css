@@ -1,0 +1,64 @@
+.body {
+  max-width: 1200px;
+  min-width: 800px;
+  margin: 0 auto; /* 가운데 정렬을 위해 추가할 수 있습니다. */
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.addList {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(229, 229, 229);
+  padding: 30px 10px;
+}
+
+.addInput {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.addList button {
+  border: none;
+  padding: 0 30px;
+  color: white;
+  background-color: rgb(32, 135, 43);
+  border-radius: 10px;
+}
+.addList button:hover {
+  background-color: rgb(17, 61, 22);
+}
+
+.workingBox,
+.doneBox {
+  display: flex;
+}
+
+.todoItem {
+  border: 2px solid rgb(7, 155, 22);
+  border-radius: 10px;
+  margin: 0 10px;
+  padding: 10px;
+}
+.todoItem p {
+  width: 200px;
+}
+.todoItem p:first-child {
+  font-size: 24px;
+}
+.todoItem button {
+  background-color: white;
+  width: 90px;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+.deleteBtn {
+  border: 2px solid red;
+}
+.completeBtn {
+  border: 2px solid green;
+}
