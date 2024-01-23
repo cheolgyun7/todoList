@@ -6,16 +6,17 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const id = useRef(0);
-
-  const onCreate = (title, contents, isDone) => {
-    const newItem = {
+  const todoButton = () => {
+    const add = {
+      id: id.current,
       title,
       contents,
-      isDone,
-      id: id.current,
+      isDone: false,
     };
     id.current += 1;
-    setTodos([...todos, newItem]);
+    setTodos([...todos, add]);
+    setTitle("");
+    setContents("");
   };
 
   const [title, setTitle] = useState("");
@@ -29,18 +30,8 @@ function App() {
     setContents(e.target.value);
   };
 
-  const todoButton = () => {
-    const add = {
-      title,
-      contents,
-      isDone: false,
-    };
-    setTodos([...todos, add]);
-    setTitle("");
-    setContents("");
-  };
-
   const completeButton = (index) => {
+    console.log(todos);
     const completeTodo = todos[index]; //클릭된 state의 index값
     const doneState = todos.filter((value, i) => i !== index);
     completeTodo.isDone = true;
@@ -52,6 +43,12 @@ function App() {
     cancelTodo.isDone = false;
     const cancelState = todos.filter((value, i) => i !== index);
     setTodos([...cancelState, cancelTodo]);
+  };
+
+  const deleteButton = (index) => {
+    console.log(todos);
+    const updateTodo = todos.filter((todo) => todo.id !== index);
+    setTodos(updateTodo);
   };
 
   return (
@@ -83,7 +80,12 @@ function App() {
                 <div className="todoItem" key={index}>
                   <p>{item.title}</p>
                   <p>{item.contents}</p>
-                  <button className="deleteBtn">삭제하기</button>
+                  <button
+                    onClick={() => deleteButton(item.id)}
+                    className="deleteBtn"
+                  >
+                    삭제하기
+                  </button>
                   <button
                     onClick={() => completeButton(index)}
                     className="completeBtn"
@@ -103,7 +105,12 @@ function App() {
                 <div className="todoItem" key={index}>
                   <p>{item.title}</p>
                   <p>{item.contents}</p>
-                  <button className="deleteBtn">삭제하기</button>
+                  <button
+                    onClick={() => deleteButton(item.id)}
+                    className="deleteBtn"
+                  >
+                    삭제하기
+                  </button>
                   <button onClick={() => cancelButton(index)}>취소</button>
                 </div>
               );
