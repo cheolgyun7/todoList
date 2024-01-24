@@ -1,4 +1,4 @@
-body {
+.divBody {
   max-width: 1200px;
   min-width: 800px;
   margin: 0 auto;
@@ -43,6 +43,7 @@ article {
 .cardBox {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 .todoCard {
   max-width: 200px;
@@ -52,6 +53,7 @@ article {
   padding: 30px;
   position: relative;
   margin-right: 10px;
+  margin-bottom: 50px;
 }
 .todoCard div {
   position: absolute;
@@ -80,4 +82,17 @@ article {
   border: 2px solid green;
   background-color: green;
   color: white;
+}
+.footerBox {
+  color: white;
+  position: fixed;
+  bottom: 0;
+  height: 200px;
+  width: 100vw;
+  background-color: rgb(19, 19, 19);
+}
+.footerName {
+  max-width: 1200px;
+  min-width: 800px;
+  margin: 10px auto;
 }

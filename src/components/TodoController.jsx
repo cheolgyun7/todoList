@@ -38,7 +38,7 @@ const TodoController = () => {
   const workingTodo = todos.filter((todo) => !todo.isDone);
   const doneTodos = todos.filter((todo) => todo.isDone);
   return (
-    <>
+    <div className="divBody">
       <TodoForm onSubmitTodo={onSubmitTodo} />
       <TodoList
         todos={workingTodo}
@@ -52,7 +52,7 @@ const TodoController = () => {
         onDeleteClick={onDeleteClick}
         onToggleClick={onToggleClick}
       />
-    </>
+    </div>
   );
 };
 
