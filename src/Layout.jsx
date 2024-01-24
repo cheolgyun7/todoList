@@ -1,10 +1,12 @@
+import React from "react";
+
 const Layout = ({ children }) => {
   return (
     <>
-      <div className="header">
-        <p>Todo-List</p>
+      <header>
+        <p>My Todolist</p>
         <p>React</p>
-      </div>
+      </header>
       {children}
     </>
   );
